@@ -29,28 +29,31 @@ class Window(QWidget):
 
     def setup_ui(self):
         # 添加 3 个子控件按钮 - 窗口的右上角
-        close_btn = QPushButton(self)
+        close_icon = QIcon('img/close.png')
+        close_btn = QPushButton(close_icon, '', self)
         self.close_btn = close_btn
-        close_btn.setText('关闭')
+        # close_btn.setText('关闭')
         close_btn.resize(self.btn_w, self.btn_h)
 
-        max_btn = QPushButton(self)
+        max_icon = QIcon('img/maximize.png')
+        max_btn = QPushButton(max_icon, '', self)
         self.max_btn = max_btn
-        max_btn.setText('最大化')
+        # max_btn.setText('最大化')
         max_btn.resize(self.btn_w, self.btn_h)
 
-        mini_btn = QPushButton(self)
+        mini_icon = QIcon('img/minimize.png')
+        mini_btn = QPushButton(mini_icon, '', self)
         self.mini_btn = mini_btn
-        mini_btn.setText('最小化')
+        # mini_btn.setText('最小化')
         mini_btn.resize(self.btn_w, self.btn_h)
 
         def max_normal():
             if self.isMaximized():
                 self.showNormal()
-                max_btn.setText('最大化')
+                # max_btn.setText('最大化')
             else:
                 self.showMaximized()
-                max_btn.setText('还原')
+                # max_btn.setText('还原')
 
         close_btn.pressed.connect(self.close)
         max_btn.pressed.connect(max_normal)
