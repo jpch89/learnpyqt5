@@ -20,7 +20,7 @@ app = QApplication(sys.argv)
 # 2.1 创建控件
 window = QWidget()
 # 2.2 设置控件
-window.setWindowTitle('鼠标操作案例1')
+window.setWindowTitle('鼠标操作案例')
 window.resize(500, 500)
 
 label = Label(window)
