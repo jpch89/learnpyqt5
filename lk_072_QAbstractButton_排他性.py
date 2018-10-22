@@ -24,6 +24,28 @@ for i in range(3):
     print(f'默认情况 {btn_name} 是否可选中：', btn.isCheckable())
     print('-' * 50)
 
+    # 设置 QPushButton 为可选中
+    btn.setCheckable(True)
+
+    # 设置排他性
+    btn.setAutoExclusive(True)
+
+# 单独加一个按钮，默认没有排他性
+# 同一级别当中（拥有相同的父控件）：
+# 只要设置了排他性为 True，就互相排斥
+btn = QPushButton(window)
+btn.setCheckable(True)
+btn.setText('按钮4')
+btn.move(250, 250)
+
+# QRadioButton
+# 默认是可以被选中的 checkable
+# 默认也是排他的 auto exclusive
+
+# QCheckBox
+# 默认是可以被选中的
+# 默认不排他
+
 # 2.3 展示控件
 window.show()
 
